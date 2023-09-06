@@ -136,6 +136,7 @@ class _MobileNumberState extends State<MobileNumber> {
                   style:
                       ElevatedButton.styleFrom(primary: Colors.indigo.shade600),
                   onPressed: () async {
+                    print("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
                     await FirebaseAuth.instance.verifyPhoneNumber(
                       phoneNumber: countryCode.text + phone.text,
                       verificationCompleted:
