@@ -136,17 +136,6 @@ class _MobileNumberState extends State<MobileNumber> {
                   style:
                       ElevatedButton.styleFrom(primary: Colors.indigo.shade600),
                   onPressed: () async {
-                    Navigator.push(
-                      context,
-                      PageTransition(
-                        duration: const Duration(milliseconds: 300),
-                        alignment: Alignment.center,
-                        type: PageTransitionType.rightToLeft,
-                        child: VerifyPhone(
-                          phone: phone.text,
-                        ),
-                      ),
-                    );
                     await FirebaseAuth.instance.verifyPhoneNumber(
                       phoneNumber: countryCode.text + phone.text,
                       verificationCompleted:
@@ -168,6 +157,17 @@ class _MobileNumberState extends State<MobileNumber> {
                       },
                       codeAutoRetrievalTimeout: (String verificationId) {},
                     );
+                    // Navigator.push(
+                    //   context,
+                    //   PageTransition(
+                    //     duration: const Duration(milliseconds: 300),
+                    //     alignment: Alignment.center,
+                    //     type: PageTransitionType.rightToLeft,
+                    //     child: VerifyPhone(
+                    //       phone: phone.text,
+                    //     ),
+                    //   ),
+                    // );
                   },
                   child: const Text(
                     Strings.continueText,
